@@ -1,22 +1,23 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View } from "react-native";
-import Title from "./src/components/Title";
-import Form from "./src/components/Form";
+import React from "react";
+import { View, StyleSheet } from "react-native";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Title />
-      <Form />
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+import MinMax from "./components/C03_MinMax.js";
+import Aleatorio from "./components/C04_Aleatorio";
+
+export default () => (
+  <View style={styles.App}>
+    <MinMax min={50} max={20} />
+    <Aleatorio min={1} max={60} />
+    <Aleatorio min={1} max={60} />
+    <Aleatorio min={1} max={60} />
+    <Aleatorio min={1} max={60} />
+  </View>
+);
 
 const styles = StyleSheet.create({
-  container: {
+  App: {
     flex: 1,
-    backgroundColor: "#e0e5e5",
-    paddingTop: 80,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
